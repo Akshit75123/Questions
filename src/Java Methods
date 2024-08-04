@@ -1,0 +1,226 @@
+Integer.toString()
+Character.toString()
+String.valueOf(#character)
+Integer.parseString();
+Arrays.fill(array,value)
+Arrays.equal(array1,array2)
+char ch=string.charAt(index)
+
+
+str.toLowerCase()
+str.toUpperCase()
+
+split functions -->
+String str="Java,Python,Ruby";
+String[] arr=str.split(",")
+arr[0]=Java
+arr[1]=Python
+arr[2]=Ruby
+
+In order to take inputs in a loop End of line after integer input must be handled.
+sc.nextLine(); // end of line after every nextInt or nextFloat or nextDouble
+
+Finding Index of a String Array Element -->
+Syntax --> Arrays.asList(<name_of_the_StringArray>).indexOf(<String in double qoutes>)
+For Example-->
+temp=Arrays.asList(chr).indexOf("A");
+#Thanks stack overflow
+
+Converting ascii value to the corresponding integer..
+Character.toString((char    ) i)
+
+Deletion of element from an array
+int j = 1; //index of the element to be deleted
+for (int i = 0, k = 0; i < arr.length ; i++){
+    if (i !=j){
+        newArray[k] = arr[i]
+        k ++;
+    }
+}
+
+To find the maximum element from the array in java
+int max = Arrays.stream(prod).max().getAsInt();
+
+Array to ArrayList (finding max element from an array)
+List <Integer> list = new ArrayList<Integer>();
+                for (int i = 0; i < n-count; i++) {
+                    list.add(prod[i]);
+                }
+                System.out.println(Collections.max(list));
+
+String to character Array
+char[] arrayname=inputString.toCharArray();
+
+JAVA char TO int
+
+ArrayList to Array
+
+ArrayList<Integer> l=new ArrayList<>();
+
+l.add(10);
+l.add(20);
+l.add(30);
+l.add(40);
+
+Object[] o=l.toArray();
+//o is an array
+
+//Lexicographic sort of string array
+
+int compareToIgnoreCase(String)
+
+used function
+
+string1.compareToIgnoreCase(string2)
+
+return 0 if both are equal
+return less than 0 if string1 is greater than string2
+return more than 0 if string1 is lesser(on the basis of ascii) than string2
+
+//lEXICOGRAPHIC SORT OF THE STRING ARRAY
+
+Arrays.sort(arr,String.CASE_INSENSITIVE_ORDER);
+
+//GREATEST VALUE OF INT
+Integer.MAX_VALUE
+Integer.MIN_VALUE
+
+//returning class from main function
+
+return new <classname>(#return argumnets);
+
+//finding minimum and maximum element in an array
+
+Collections.min(Arrays.asList(arr));
+Collections.max(Arrays.asList(arr));
+
+Arrays.stream(<arrayName>).min().getAsInt();
+Arrays.stream(<arrayName>).max().getAsInt();
+
+//finding minimum and maximum element in an set
+
+Collections.min(<setName>);
+Collections.max(Arrays.asList(<setName>);
+
+//finding minimum and maximum element in an list
+
+Collections.min(Arrays.asList(list));
+Collections.max(Arrays.asList(list));
+
+//IN MAP
+// Java program to find the minimum and
+// maximum element in a Map
+
+import java.util.*;
+
+public class GFG {
+	public static void main(String args[]) throws Exception
+	{
+
+		// Creating hashMap
+		Map<String, Integer> map
+			= new HashMap<String, Integer>();
+
+		// Putting key-value pairs in map
+		map.put("A", 10);
+		map.put("B", 15);
+		map.put("C", 20);
+		map.put("D", 25);
+
+		// Print the map
+		System.out.println("Map: " + map);
+
+		// getting minimum value using min()
+		String minKey = Collections.min(map.keySet());
+
+		// getting maximum value using max()
+		String maxKey = Collections.max(map.keySet());
+
+		// printing the minimum value
+		System.out.println("Minimum Key of Map is: "
+						+ minKey);
+		System.out.println("Value corresponding to "
+						+ "minimum Key of Map is: "
+						+ map.get(minKey));
+
+		// printing the maximum value
+		System.out.println("Maximum Key of Map is: " + maxKey);
+		System.out.println("Value corresponding to "
+						+ "maximum Key of Map is: "
+						+ map.get(maxKey));
+	}
+}
+
+// Java program to find the minimum and
+// maximum element in a Map
+
+import java.util.*;
+
+public class GFG {
+	public static void main(String args[]) throws Exception
+	{
+
+		// Creating hashMap
+		Map<String, Integer> map
+			= new HashMap<String, Integer>();
+
+		// Putting key-value pairs in map
+		map.put("A", 10);
+		map.put("B", 15);
+		map.put("C", 20);
+		map.put("D", 25);
+
+		// Print the map
+		System.out.println("Map: " + map);
+
+		// getting minimum value using min()
+		int minValue = Collections.min(map.values());
+
+		// getting maximum value using max()
+		int maxValue = Collections.max(map.values());
+
+		// printing the minimum value
+		System.out.println("Minimum Value of Map is: "
+						+ minValue);
+
+		// printing the maximum value
+		System.out.println("Maximum Value of Map is: "
+						+ maxValue);
+	}
+}
+
+//For copying the arr array into temp
+
+System.copyarray(arr,0,temp,0,n);
+
+//Decimal to binary
+
+String <stringname>=Integer.toBinaryString(<number>);
+
+//Binary to Decimal
+int <varName>= Integer.parseInt(<String>,2);
+
+//Paired ArrayList (GFG Sum pair question)
+
+ArrayList<pair> pairs=new ArrayList<>();
+pairs.add(new pair(2,3));
+
+// checking Substring in a string present or not
+string.contains(substring) --> returns boolean value.
+string.indexOf(substring) --> returns int value.
+
+//Comparing two BigInteger
+BigInteger <bg>.compareTo(BigInteger <val>)
+returns 1 if bg>val
+        0 if bg==val
+       -1 if bg<val
+
+// Sorting string in java
+1. convert string into character array by string.toCharArray();
+2. use Arrays.sort();
+
+//searching in the array
+note: without linear and binary search
+
+convert array to arrayList and use list.contains() method
+Arrays.asList(arr).contains(#element); returns boolean value
