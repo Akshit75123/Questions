@@ -224,3 +224,14 @@ note: without linear and binary search
 
 convert array to arrayList and use list.contains() method
 Arrays.asList(arr).contains(#element); returns boolean value
+
+//for HashMap
+computeIfAbsent()
+e.g.
+for (int i = 0; i < n; i++) {
+                a[i] = scanner.nextInt();
+                map.computeIfAbsent(a[i], k -> new ArrayList<>()).add(i);
+            }
+
+            List<List<Integer>> v = new ArrayList<>(map.values());
+            v.sort(Comparator.comparingInt(List::size));

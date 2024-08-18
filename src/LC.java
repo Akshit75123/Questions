@@ -1,18 +1,57 @@
+import java.util.*;
+
 public class LC {
     public static void main(String[] args) {
-        Solu sol=new Solu();
-        int[] arr={1,0,0,0,1};
-        System.out.println(Solu.canPlaceFlowers(arr,2));
+        Sol sol=new Sol();
+
+//        System.out.println(sol.isSubsequence("","abcdef"));
+//        System.out.println(sol.compress(cha));
     }
 }
 class Solu {
-    public static boolean canPlaceFlowers(int[] flowerbed, int n) {
-        int count=0;
-        for (int i=1;i< flowerbed.length-1;i++){
-            if (flowerbed[i-1]==0 && flowerbed[i]==0 && flowerbed[i+1]==0) count++;
+    public int[] plusOne(int[] digits) {
+
+
+
+        StringBuilder s = new StringBuilder();
+
+        int flag = 0;
+        int si = digits.length;
+
+        for (int i = 0; i < si; i++) {
+
+            if (digits[i] != 0) {
+                flag = i;
+                break;
+            }
         }
-        System.out.println(count); 
-        if (count>=n) return true;
-        else return false;
+
+        for (int i = flag; i < si; i++) {
+            s.append(digits[i]);
+        }
+
+        long n = Long.parseLong(s.toString());
+        n++;
+
+        ArrayList<Integer> l = new ArrayList<>();
+
+
+        while(n > 0) {
+            int rem = (int) n % 10;
+            l.add(rem);
+            n /= 10;
+
+        }
+        Collections.reverse(l);
+
+        int[] arr = new int[l.size()];
+
+        for (int i = 0; i < l.size(); i++) {
+
+            arr[i] = l.get(i);
+        }
+
+        return arr;
+
     }
 }

@@ -1,7 +1,7 @@
 package LinkedList;
 
 public class LL {
-    private class Node {
+    public class Node {
 
         private int value;
         private Node next;
@@ -51,6 +51,76 @@ public class LL {
         size++;
     }
 
+    public void insert(int val, int index) {
+        if (index == 0) {
+            insertFirst(val);
+            return;
+        }
+
+        if (index == size) {
+            insertLast(val);
+            return;
+        }
+
+        Node temp = head;
+
+        for (int i = 1; i < index; i++) {
+            temp = temp.next;
+        }
+
+        Node node = new Node(val,temp.next); //structure of linked list changed
+        temp.next = node;
+        size ++ ;
+
+    }
+
+    public int deleteFirst() {
+        int val = head.value;
+        head = head.next;
+
+        if(head == tail) {
+            tail = null;
+        }
+        size --;
+        return val;
+    }
+
+    public int deleteLast () {
+        if (size <= 1) return deleteFirst();
+
+        Node secondlast = get(size - 2);
+        int val = tail.value;
+        tail = secondlast;
+        tail.next = null;
+        return val;
+
+    }
+
+    public int delete (int n) {
+        if (n == 0) deleteFirst();
+        if (n == size - 1) deleteLast();
+        Node prev = get(n - 1);
+        int val = prev.next.value;
+        prev.next = prev.next.next;
+        return val;
+    }
+
+    public Node find(int val) { 
+        Node node = head;
+        while(node != null) {
+            if (node.value == val) return node;
+            node = node.next;
+        }
+        return null;
+    }
+    public Node get(int index) {
+        Node node = head;
+        for (int i = 0; i < index ; i++) {
+            node = node.next;
+        }
+        return node;
+    }
+
     public void display(){
         Node temp=head;
         while(temp!=null){
@@ -61,10 +131,5 @@ public class LL {
     }
 }
 
-//    public static void main(String[] args) {
-//        LinkedList<Integer> list=new LinkedList<>();
-//        list.add(32);
-//        list.add(45);
-//        System.out.println(list);
-//    }
+
 
