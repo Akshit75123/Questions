@@ -8,64 +8,35 @@ import java.util.*;
 import java.awt.Point;
 
 public class Main {
-
-    public static int maxOfFour(int a, int b, int c,int d){
-        int m1 = Math.max(a,b);
-        int m2 = Math.max(m1,c);
-        return Math.max(m2,d);
-    }
-    public static void main(String args[] ) throws Exception {
-        Scanner sc= new Scanner(System.in);
-        int tt = sc.nextInt();
-        while(tt-->0) {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int test = sc.nextInt();
+        while(test --> 0){
             int n = sc.nextInt();
-            int m = sc.nextInt();
-
-            int[][] mat = new int[n][m];
-
-            for (int i = 0; i < n ; i++) {
-                for (int j = 0; j < m ; j++) {
-                    mat[i][j] = sc.nextInt();
+            int[] arr = new int[n];
+            for (int i = 0; i < n; i++) arr[i] = sc.nextInt();
+            if (n == 1 ) System.out.println(1);
+            else {
+                int k =1;
+                boolean f=false;
+                for (int i =0;i<n;i++) {
+                    if (arr[i] == 0) f=true;
+                    else {
+                        f=false;
+                        break;
+                    }
                 }
-            }
+                for (int i = 1; i < n - 1; i++) {
+                    if (arr[i] != 0 && arr[i + 1] == 0) {
+                        k++;
 
-            int[][] ans = new int[n + 2][m + 2];
-            int p = 0;
-            for (int i = 1; i < n + 1;i ++){
-                int q = 0;
-                for (int j = 1; j < m + 1; j++) {
-                    ans[i][j] = mat[p][q];
-                    q++;
-                }
-                p++;
-            }
-
-            for (int i = 1; i < n + 1;i ++){
-                for (int j = 1; j < m + 1; j++) {
-                    if (ans[i][j] > maxOfFour(ans[i - 1][j],ans[i][j - 1],ans[i + 1][j],ans[i][j + 1])) {
-                        ans[i][j] = maxOfFour(ans[i - 1][j],ans[i][j - 1],ans[i + 1][j],ans[i][j + 1]);
                     }
                 }
 
-            }
-
-            int b = 1;
-            for (int i = 0; i < n; i++) {
-                int c = 1;
-                for (int j = 0; j < m; j++) {
-                    mat[i][j] = ans[b][c];
-                    c ++;
-                }
-                b ++;
-            }
-            for (int i = 0; i < n ; i++) {
-                for (int j = 0; j < m ; j++) {
-                    System.out.print(mat[i][j] + " ");
-                }
-                System.out.println();
+                System.out.println(k);
             }
 
         }
-
     }
 }
+

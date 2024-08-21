@@ -74,6 +74,20 @@ public class LL {
 
     }
 
+    //insert using recursion
+    public void insertRec(int val, int ind){
+        head = insertRec(val,ind, head);
+    }
+    private Node insertRec(int val, int ind, Node node){
+        if (ind == 0) {
+            Node temp = new Node(val,node);
+            size++;
+            return temp;
+        }
+        node.next = insertRec(val,ind--,node.next);
+        return node;
+    }
+
     public int deleteFirst() {
         int val = head.value;
         head = head.next;
@@ -128,6 +142,47 @@ public class LL {
             temp=temp.next;
         }
         System.out.println("END");
+    }
+    //questions
+    //leetcode - 83
+    public void deleteDuplicates(){
+        Node node = head;
+        while(node.next != null){
+            if (node.value == node.next.value) {
+                node.next = node.next.next;
+                size -- ;
+            }
+            else {
+                node = node.next;
+            }
+        }
+        tail = node;
+        tail.next = null;
+    }
+    //leetcode -
+    public static LL merge (LL first, LL second) {
+        Node f = first.head;
+        Node s = second.head;
+        LL ans = new LL();
+        while (f != null && s != null) {
+            if (f.value < s.value) {
+                ans.insertLast(f.value);
+                f = f.next;
+            }
+            else {
+                ans.insertLast(s.value);
+                s = s.next;
+            }
+        }
+        while (f != null) {
+            ans.insertLast(f.value);
+            f = f.next;
+        }
+        while (s != null) {
+            ans.insertLast(s.value);
+            s = s.next;
+        }
+        return ans;
     }
 }
 

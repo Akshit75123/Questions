@@ -22,14 +22,23 @@ public class Main {
 //        list.display();
 //        System.out.println(list.find(1));
 
-        DLL list = new DLL();
-        list.insertFirst(2);
-        list.insertFirst(3);
-        list.insertFirst(6);
-        list.insertFirst(5);
-        list.insertFirst(8);
-        list.insertLast(8);
-        list.insertAfter(6,54);
+//        DLL list = new DLL();
+//        list.insertFirst(2);
+//        list.insertFirst(3);
+//        list.insertFirst(6);
+//        list.insertFirst(5);
+//        list.insertFirst(8);
+//        list.insertLast(8);
+//        list.insertAfter(6,54);
+//        list.display();
+
+        CLL list = new CLL();
+        list.insert(23);
+        list.insert(3);
+        list.insert(2);
+        list.insert(4);
+        list.insert(43);
+//        list.delete(3);
         list.display();
 
     }
